@@ -21,11 +21,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-
-
 * ...
 
- ## membersテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
