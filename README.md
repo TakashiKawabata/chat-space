@@ -2,12 +2,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|group_id|reference|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## messagesテーブル
 
@@ -15,12 +15,12 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|group_id|reference|null: false, foreign_key: true|
-|user_id|reference|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## groupsテーブル
 
@@ -31,6 +31,7 @@
 ### Association
 - has_many :users, through: :members
 - has_many :messages
+- has_many :members
 
 ##usersテーブル
 
@@ -41,3 +42,4 @@
 ### Association
 - has_many :messages
 - has_many :groups, through: :members
+- has_many :members
