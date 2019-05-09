@@ -8,13 +8,13 @@
   justify-content: space-between;
   border-bottom: solid 1px #eee;
     &__edit-btn {
+      text-decoration: none;
       height: 38px;
       line-height: 40px;
       padding: 0 20px;
       margin-top: 30px;
       border: solid 1px $light_blue;
       color: $light_blue;
-      text-decoration: none;
     }
     .current-group{
       font-size: 20px;
@@ -67,7 +67,6 @@
           margin-bottom: 10px;
         }
     }
-    
     .fa.fa-image {
       margin-top: 6px;
     }
@@ -92,6 +91,7 @@
           background-color: #38aef0;
           color: white;
           cursor: pointer;
+          text-decoration: none;
         }
     }
     .input, textarea, select {

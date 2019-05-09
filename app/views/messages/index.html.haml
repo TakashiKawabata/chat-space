@@ -6,18 +6,17 @@
         %p.side-header__user-name Takashi
         %ul.user-menu
           %li.user-menu__edit-user
-            %a{:href => "/groups/new"}
+            = link_to do
               %i.fa.fa-edit
            
           %li.user-menu__new-group
-            %a{:href => "/users/438/edit"}
+            = link_to do
               %i.fa.fa-cog
       .groups
-        %a{:href => "/groups/1049/messages", :style =>"text-decoration: none"}
+        = link_to do
           .group
             %p.group__group-name takashi
             %p.group__latest-message aaaa
-
     .chat-main
       .main-header
         .current-group{"data-group_id" => "1049"}
@@ -25,7 +24,7 @@
           %ul.member-list
             Member：
             %li.member-list__member takashi.kawabata
-        %a{:href => "/groups/1049/edit", :style =>"text-decoration: none"}
+        = link_to do
           .main-header__edit-btn Edit
       .messages
         .message{"data-message_id" => "2535"}
