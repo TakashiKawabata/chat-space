@@ -1,0 +1,49 @@
+%link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+.flash-box
+  .wrapper
+    .chat-side
+      .side-header
+        %p.side-header__user-name Takashi
+        %ul.user-menu
+          %li.user-menu__edit-user
+            = link_to do
+              %i.fa.fa-edit
+           
+          %li.user-menu__new-group
+            = link_to do
+              %i.fa.fa-cog
+      .groups
+        = link_to do
+          .group
+            %p.group__group-name takashi
+            %p.group__latest-message aaaa
+    .chat-main
+      .main-header
+        .current-group{"data-group_id" => "1049"}
+          %h2.current-group__name inoue
+          %ul.member-list
+            Member：
+            %li.member-list__member takashi.kawabata
+        = link_to do
+          .main-header__edit-btn Edit
+      .messages
+        .message{"data-message_id" => "2535"}
+          .upper-info
+            %p.upper-info__user タカシ
+            %p.upper-info__date 2019/05/06(Mon) 11:59:17
+          %p.message__text アイウエオ
+        .message{"data-message_id" => "2536"}
+          .upper-info
+            %p.upper-info__user かわばた
+            %p.upper-info__date 2019/05/06(Mon) 11:59:21
+          %p.message__text bbbbb
+      .form
+        %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/1049/messages", :enctype => "multipart/form-data", :method => "post"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %input{:name => "authenticity_token", :type => "hidden", :value => "Ywkwe6lUGpsvw5GZaT2gPWLp3iZq2iiqWYkdXvoUs8sll1KedsdZIwQ3WoWf4by5ywHSoc91WIw3pKQMxXBURw=="}/
+          .input-box
+            %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+            %label.image-label{:for => "message_image"}
+              %i.fa.fa-image
+              %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
+          %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
